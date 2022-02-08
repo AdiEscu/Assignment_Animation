@@ -1,0 +1,102 @@
+*
+body
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #050210;
+}
+
+.circle
+{
+    position: relative;
+    height: 40vh;
+    width: 40vh;
+    border-radius: 50%;
+    background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+    animation: animate 1s linear infinite;
+}
+@keyframes animate
+{
+    0%
+    {
+        transform:rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+.circle span
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background:linear-gradient(#fb5dad, #55fb9f, #b97aff);
+}
+
+.circle span:nth-child(1)
+{
+    filter:blur(5px);
+}
+.circle span:nth-child(2)
+{
+    filter:blur(15px);
+}
+.circle span:nth-child(3)
+{
+    filter:blur(35px);
+}
+.circle span:nth-child(4)
+{
+    filter:blur(65px);
+}
+
+.circle::after
+{
+    content: "";
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    right: 30px;
+    bottom: 30px;
+    background: #0a0a0a;
+    border-radius: 50%;
+}
+ 
+.pulse{
+    height: 35vh;
+    width: 35vh;
+    background: #0a051d;
+    position:absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+}
+
+.pulse::after{
+    content:"";
+    height: 100%;
+    width: 100%;
+    background: #100e309d;
+    position:absolute;
+    margin: auto;
+    border-radius: 50%;
+    animation: pulse 1.5s ease-out infinite;
+}
+
+@keyframes pulse{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
